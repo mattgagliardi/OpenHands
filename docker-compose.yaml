@@ -7,6 +7,7 @@ services:
     environment:
       - SANDBOX_RUNTIME_CONTAINER_IMAGE=${SANDBOX_RUNTIME_CONTAINER_IMAGE}
       - LOG_ALL_EVENTS=true
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
     ports:
       - "3000:3000"
     volumes:
