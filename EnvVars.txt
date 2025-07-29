@@ -1,0 +1,44 @@
+Core Configuration
+LLM_API_KEY: Your API key for the LLM provider (Anthropic, OpenAI, etc.)
+LLM_MODEL: The model to use (e.g., anthropic/claude-sonnet-4-20250514)
+LLM_API_VERSION: API version (for Azure OpenAI)
+LOG_ALL_EVENTS: Set to true to log all events
+
+Runtime & Sandbox Configuration
+SANDBOX_RUNTIME_CONTAINER_IMAGE: Specify the runtime container image
+SANDBOX_BASE_CONTAINER_IMAGE: Specify a custom base container image
+SANDBOX_USER_ID: User ID to use in the sandbox (typically set to $(id -u) for host permission matching)
+SANDBOX_TIMEOUT: Timeout in seconds for sandbox operations (default: 120)
+SANDBOX_RUNTIME_BINDING_ADDRESS: Address to bind to (default: 0.0.0.0, use 127.0.0.1 for local-only access)
+SANDBOX_USE_HOST_NETWORK: Set to true to use host network mode
+SANDBOX_LOCAL_RUNTIME_URL: URL for local runtime access (default: http://host.docker.internal)
+SANDBOX_DOCKER_RUNTIME_KWARGS: JSON string with Docker runtime arguments
+
+Filesystem & Volume Mounting
+SANDBOX_VOLUMES: Mount local directories in format host_path:container_path:mode (e.g., /path/to/code:/workspace:rw,/data:/data:ro)
+
+Repository Integration
+GITHUB_TOKEN: GitHub token for repository access
+SANDBOX_SELECTED_REPO: Repository name in format owner/repo-name
+INIT_GIT_IN_EMPTY_WORKSPACE: Set to 1 to initialize git in empty workspace
+
+Custom Environment Variables
+Any variable prefixed with SANDBOX_ENV_ will be passed to the sandbox (e.g., SANDBOX_ENV_NODE_ENV=production makes NODE_ENV=production available inside the container)
+
+File Storage Configuration
+FILE_STORE: Storage type (e.g., local, s3, gcs)
+FILE_STORE_PATH: Path for file storage (default: .openhands)
+AWS_S3_BUCKET: S3 bucket name for file storage when using S3
+
+Browser Automation
+ENABLE_BROWSER: Enable browser automation features
+
+Container Resource Limits
+Through the SANDBOX_DOCKER_RUNTIME_KWARGS JSON string, you can set:
+Memory limits (e.g., "mem_limit": "2g")
+CPU allocation (e.g., "cpu_count": 2)
+
+Additional environment variables (e.g., "environment": {"MY_VAR": "value"})
+
+Testing Variables (not typically used in production)
+RUN_AS_OPENHANDS: Whether to run as openhands user
