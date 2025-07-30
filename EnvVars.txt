@@ -1,7 +1,6 @@
 Core Configuration
 LLM_API_KEY: Your API key for the LLM provider (Anthropic, OpenAI, etc.)
 LLM_MODEL: The model to use (e.g., anthropic/claude-sonnet-4-20250514)
-LLM_API_VERSION: API version (for Azure OpenAI)
 LOG_ALL_EVENTS: Set to true to log all events
 
 Runtime & Sandbox Configuration

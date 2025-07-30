@@ -1,9 +1,10 @@
 
 # OpenHands Docker Setup
 
-This repository contains Docker Compose templates and associated `.env` files for starting an OpenHands instance. The OpenHands project is an open-source initiative aimed at creating a collaborative platform for AI development and research.
+This repository contains Docker Compose templates and an associated `.env` file creator for starting an OpenHands instance. The OpenHands project is an open-source initiative aimed at creating a collaborative platform for AI development and research.
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Setup Instructions](#setup-instructions)
 
@@ -16,11 +17,13 @@ This repository provides the necessary Docker Compose configurations to easily s
 To get started with OpenHands using Docker, follow these steps:
 
 1. Clone this repository:
+
    ```bash
-   git clone https://github.com/All-Hands-AI/OpenHands.git
+   git clone https://github.com/mattgagliardi/OpenHands.git
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd OpenHands
    ```
@@ -28,6 +31,7 @@ To get started with OpenHands using Docker, follow these steps:
 3. Ensure you have Docker and Docker Compose installed on your system.
 
 4. Start the OpenHands instance using Docker Compose:
+
    ```bash
    docker-compose up -d
    ```
