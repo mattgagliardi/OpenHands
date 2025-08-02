@@ -1,10 +1,11 @@
+
 #!/bin/bash
 # Git information
-$gitPAT = $env:GITHUB_PAT
+gitPAT="${GITHUB_PAT:-}"
 
 # LLM Information
-$apiKey = $env:OLLAMA_API_KEY
-$llmModel = $env:OLLAMA_LLM_MODEL
+apiKey="${OLLAMA_API_KEY:-}"
+llmModel="${OLLAMA_LLM_MODEL:-}"
 
 OS=$(uname -s)
 USERNAME=$(whoami)
