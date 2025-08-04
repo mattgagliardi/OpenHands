@@ -10,6 +10,7 @@ services:
       - GITHUB_TOKEN=${GITHUB_TOKEN}
       - LLM_MODEL=$(LLM_MODEL)
       - LLM_API_KEY=$(LLM_API_KEY)
+      - ENABLE_BROWSER=true
     ports:
       - "3000:3000"
     volumes:
