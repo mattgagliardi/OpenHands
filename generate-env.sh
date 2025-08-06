@@ -4,20 +4,20 @@
 gitPAT="${GITHUB_PAT:-}"
 
 # LLM Information
-apiKey="${OLLAMA_API_KEY:-}"
-llmModel="${OLLAMA_LLM_MODEL:-}"
+apiKey="${LLM_API_KEY:-}"
+llmModel="${LLM_MODEL:-}"
 
 OS=$(uname -s)
 USERNAME=$(whoami)
 USER_ID=$(id -u)
 
 # Customize paths
-CODE_PATH="$HOME/projects/openhands"  # <- adjust as needed
+CODE_PATH="$HOME/projects"  # <- adjust as needed
 CONTAINER_PATH="/workspace"
 RUNTIME_IMAGE="docker.all-hands.dev/all-hands-ai/runtime:0.51-nikolaik"
 
 # Compose SANDBOX_VOLUMES
-SANDBOX_VOLUMES="$CODE_PATH:$CONTAINER_PATH:rw"
+SANDBOX_VOLUMES="$CODE_PATH:$CONTAINER_PATH"
 
 # Write to .env
 cat <<EOF > .env
@@ -27,6 +27,8 @@ SANDBOX_VOLUMES=$SANDBOX_VOLUMES
 GITHUB_TOKEN=$gitPAT
 LLM_MODEL=$llmModel
 LLM_API_KEY=$apiKey
+LLM_INPUT_COST_PER_TOKEN=0.00000027
+LLM_OUTPUT_COST_PER_TOKEN=0.0000011
 EOF
 
 if [[ "$OS" == "Darwin" ]]; then
