@@ -6,6 +6,7 @@ gitPAT="${GITHUB_PAT:-}"
 # LLM Information
 apiKey="${LLM_API_KEY:-}"
 llmModel="${LLM_MODEL:-}"
+tavilyKey="${TAVILY_API_KEY:-}"
 
 OS=$(uname -s)
 USERNAME=$(whoami)
@@ -53,3 +54,10 @@ else
 fi
 
 echo ".env file created for $OS"
+
+# Create settings.json file
+cat <<EOF > settings.json
+{"language":"en","agent":"CodeActAgent","max_iterations":150,"security_analyzer":null,"confirmation_mode":false,"llm_model":"${LLM_MODEL}","llm_api_key":"${LLM_API_KEY}","llm_base_url":"","remote_runtime_resource_factor":1,"secrets_store":{"provider_tokens":{}},"enable_default_condenser":true,"enable_sound_notifications":false,"enable_proactive_conversation_starters":false,"user_consents_to_analytics":false,"sandbox_base_container_image":null,"sandbox_runtime_container_image":"${RUNTIME_IMAGE}","mcp_config":{"sse_servers":[],"stdio_servers":[],"shttp_servers":[]},"search_api_key":"${TAVILY_API_KEY}","sandbox_api_key":null,"max_budget_per_task":null,"email":null,"email_verified":null}
+EOF
+
+echo "settings.json file created"
