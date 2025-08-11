@@ -32,17 +32,26 @@ To get started with OpenHands using Docker, follow these steps:
 
 3. Ensure you have Docker and Docker Compose installed on your system.
 
-4. Create the `.env` file Docker Compose will use by running the `generate-env.sh` script. Review the script, you probably need to add some environment variables to make the script populate fully.
+4. Set up the necessary environment variables for the script:
+
+   ```bash
+   export GITHUB_PAT=-github-PAT-token-
+   export LLM_API_KEY=-api-key-for-llm-of-choice-
+   export LLM_MODEL=-llm-model-name-
+   export TAVILY_API_KEY=-tavily-search-api-token-
+   ```
+
+5. Create the `.env` file Docker Compose will use by running the `generate-env.sh` script. Review the script, you probably need to add some environment variables to make the script populate fully.
 
    ```bash
    chmod +x generate-env.sh
    ./generate-env.sh
    ```
 
-5. Start the OpenHands instance using Docker Compose:
+6. Start the OpenHands instance using Docker Compose:
 
    ```bash
    docker-compose up -d
    ```
 
-6. Follow any additional instructions in the `.env` files or documentation to configure your instance as needed. You may need to enter your desired model provider, API keys, etc. in the UI that's exposed at `http://localhost:3000`.
+7. Follow any additional instructions in the `.env` files or documentation to configure your instance as needed. You may need to enter your desired model provider, API keys, etc. in the UI that's exposed at `http://localhost:3000`.
