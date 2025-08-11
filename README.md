@@ -39,6 +39,8 @@ To get started with OpenHands using Docker, follow these steps:
    export LLM_API_KEY=-api-key-for-llm-of-choice-
    export LLM_MODEL=-llm-model-name-
    export TAVILY_API_KEY=-tavily-search-api-token-
+   export GIT_USERNAME=-your-github-username-
+   export GIT_EMAIL=-your-github-email-
    ```
 
 5. Create the `.env` file Docker Compose will use by running the `generate-env.sh` script. Review the script, you probably need to add some environment variables to make the script populate fully.

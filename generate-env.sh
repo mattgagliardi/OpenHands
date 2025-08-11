@@ -2,6 +2,8 @@
 #!/bin/bash
 # Git information
 gitPAT="${GITHUB_PAT:-}"
+gitUser="${GIT_USERNAME:-}"
+gitEmail="${GIT_EMAIL:-}"
 
 # LLM Information
 apiKey="${LLM_API_KEY:-}"
@@ -31,6 +33,8 @@ LLM_MODEL=$llmModel
 LLM_API_KEY=$apiKey
 LLM_INPUT_COST_PER_TOKEN=0.00000027
 LLM_OUTPUT_COST_PER_TOKEN=0.0000011
+GIT_USER_NAME=$gitUser
+GIT_USER_EMAIL=$gitEmail
 EOF
 
 if [[ "$OS" == "Darwin" ]]; then
