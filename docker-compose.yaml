@@ -15,6 +15,11 @@ services:
       - LLM_INPUT_COST_PER_TOKEN=${LLM_INPUT_COST_PER_TOKEN}
       - LLM_OUTPUT_COST_PER_TOKEN=${LLM_OUTPUT_COST_PER_TOKEN}
       - ENABLE_BROWSER=true
+      - LLM_NATIVE_TOOL_CALLING=true
+      - AGENT_ENABLE_BROWSING=true
+      - AGENT_ENABLE_JUPYTER=false
+      - ENABLE_GPU=true
+      - CUDA_VISIBLE_DEVICES=ALL
     ports:
       - "3000:3000"
     volumes:
