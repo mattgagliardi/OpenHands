@@ -57,7 +57,7 @@ echo ".env file created for $OS"
 
 # Create settings.json file
 cat <<EOF > settings.json
-{"language":"en","agent":"CodeActAgent","max_iterations":150,"security_analyzer":null,"confirmation_mode":false,"llm_model":"$llmModel","llm_api_key":"$apiKey","llm_base_url":"","remote_runtime_resource_factor":1,"secrets_store":{"provider_tokens":{}},"enable_default_condenser":true,"enable_sound_notifications":false,"enable_proactive_conversation_starters":false,"user_consents_to_analytics":false,"sandbox_base_container_image":null,"sandbox_runtime_container_image":"$RUNTIME_IMAGE","mcp_config":{"sse_servers":[],"stdio_servers":[],"shttp_servers":[]},"search_api_key":"$tavilyKey","sandbox_api_key":null,"max_budget_per_task":null,"email":null,"email_verified":null}
+{"language":"en","agent":"CodeActAgent","max_iterations":100,"security_analyzer":null,"confirmation_mode":false,"llm_model":"$llmModel","llm_api_key":"$apiKey","llm_base_url":"","remote_runtime_resource_factor":1,"secrets_store":{"provider_tokens":{}},"enable_default_condenser":true,"enable_sound_notifications":false,"enable_proactive_conversation_starters":false,"user_consents_to_analytics":false,"sandbox_base_container_image":null,"sandbox_runtime_container_image":"$RUNTIME_IMAGE","mcp_config":{"sse_servers":[],"stdio_servers":[],"shttp_servers":[{"url":"https://api.githubcopilot.com/mcp/","api_key":"$gitPAT"}]]},"search_api_key":"$tavilyKey","sandbox_api_key":null,"max_budget_per_task":2.0,"email":null,"email_verified":null}
 EOF
 
 echo "settings.json file created"
