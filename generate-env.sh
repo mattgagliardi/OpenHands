@@ -17,7 +17,7 @@ USER_ID=$(id -u)
 # Customize paths
 CODE_PATH="$HOME/projects"  # <- adjust as needed
 CONTAINER_PATH="/workspace"
-RUNTIME_IMAGE="docker.all-hands.dev/all-hands-ai/runtime:0.51-nikolaik"
+RUNTIME_IMAGE="docker.all-hands.dev/all-hands-ai/runtime:0.52-nikolaik"
 
 # Compose SANDBOX_VOLUMES
 SANDBOX_VOLUMES="$CODE_PATH:$CONTAINER_PATH"
