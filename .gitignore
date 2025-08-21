@@ -1,2 +1,4 @@
 .env
 settings.json
+# Specifically ignore expanded Docker Compose file
+openhands-sql.yaml
